@@ -1,0 +1,24 @@
+---
+layout: post
+title: USB to UART Convertors (PL2303 & CP2102)
+date: '2013-03-05T11:04:00.001+05:30'
+author: Anonymous
+tags:
+- bootloader
+- PL2303
+- USB
+- UART
+- PIC
+- Level Shift
+- Arduino
+- TTL
+- Input
+- LVTTL
+- CP2102
+modified_time: '2013-03-09T12:56:05.947+05:30'
+thumbnail: http://lh6.ggpht.com/--9YcKmReNPo/UTWDtthyaNI/AAAAAAAAAL4/uuwTa8jGrIk/s72-c/DSCF5633_thumb%25255B1%25255D.jpg?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-3539291158489240541
+blogger_orig_url: https://www.incrediblediy.com/2013/03/usb-to-uart-convertors-pl2303-cp2102.html
+---
+
+If you are working with any UART stuff with micro controllers,you may have to debug them or send/receive data with a PC. In good old days,all of the computers got RS232 serial ports and we could use a MAX232 IC to convert RS232 to UART. But in recent years,RS232 ports got vanished in consumer computers specially in laptops (In good old days we got laptops with serial and parallel ports).<br />There are many solutions for USB to UART interface but some of them are not really cheap(like FT232). The cheapest way to use a simple USB to UART convertor.I recently got two of them and one is using PL2303HX and other one is using CP2102. Both are compatible with 3.3V LVTTL logic levels as it seems.&nbsp; If you have an Arduino board you can use them them program the board using the boot loader. The one I got with PL2303HX doesn’t have a pin soldered for automatic reset (it uses the DTR pin on a serial port for resetting) in Arduino programming, but according to <a href="http://www.adafruit.com/datasheets/PL2303HX.pdf">datasheet</a> you can solder it to pin 2 on PL2303HX. <a href="http://www.instructables.com/id/Arduino-USB/step3/Decision-Time-Auto-Reset-or-not/">This</a> a guide with pictures telling you how to do it. CP2102 board got a presoldered pin called RST,but it is for CP2102 reset,So you need to solder DTR pin for pin 28 of CP2102 according to the <a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/cp2102.pdf">datasheet</a>.<br /><br />You can get DTR pre soldered CP2102 from <a href="http://shop.techkatha.com/shop/">Techkatha</a>. They also get Arduino UNO clone kits for very good price.The service they provide is really good :)<br /><br />&nbsp;I got PL2303HX based one for $1.68&nbsp; and CP2102 based one for $2.13 . I got the both boards with required female to female jumper wires too.<br />Here I’m testing too boards and you can get drivers from;<br /><a href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&amp;pcid=41">PL2303HX Drivers</a><br /><a href="http://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx">CP2102 Drivers</a><br /><a href="http://lh5.ggpht.com/-yRK-rUdaEFU/UTWDsXNKICI/AAAAAAAAALw/xWOTmJrLnNY/s1600-h/DSCF5633%25255B4%25255D.jpg"><img alt="DSCF5633" border="0" height="484" src="http://lh6.ggpht.com/--9YcKmReNPo/UTWDtthyaNI/AAAAAAAAAL4/uuwTa8jGrIk/DSCF5633_thumb%25255B1%25255D.jpg?imgmax=800" style="background-image: none; border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline; padding-left: 0px; padding-right: 0px; padding-top: 0px;" title="DSCF5633" width="644" /></a><br /><a href="http://lh3.ggpht.com/-fnCl-wKtNaw/UTWDuqennJI/AAAAAAAAAMA/nBxY1ToAZ-M/s1600-h/image%25255B10%25255D.png"><img alt="image" border="0" height="475" src="http://lh3.ggpht.com/-QCo-iZHekew/UTWDv7vKeHI/AAAAAAAAAMI/Q9vjxJGDS7I/image_thumb%25255B4%25255D.png?imgmax=800" style="background-image: none; border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline; padding-left: 0px; padding-right: 0px; padding-top: 0px;" title="image" width="644" /></a><br />I did a simple echo test using my favourite serial debugging tool SSCOM32 (like good old HyperTerminal) . You can download it from <a href="http://code.google.com/p/musicshield/downloads/detail?name=sscom32E.exe&amp;can=2&amp;q=">here</a>. The echo test on both modules was a success.<br /><a href="http://lh5.ggpht.com/-oYiE9Wpqy70/UTWDw-5ctvI/AAAAAAAAAMQ/r8uIkrTzKJc/s1600-h/sscom%25255B3%25255D.jpg"><img alt="sscom" border="0" height="484" src="http://lh5.ggpht.com/-lzwyCWSPV-w/UTWDyGrj_II/AAAAAAAAAMY/BqXgyPkkRuo/sscom_thumb%25255B1%25255D.jpg?imgmax=800" style="background-image: none; border-bottom: 0px; border-left: 0px; border-right: 0px; border-top: 0px; display: inline; padding-left: 0px; padding-right: 0px; padding-top: 0px;" title="sscom" width="609" /></a>

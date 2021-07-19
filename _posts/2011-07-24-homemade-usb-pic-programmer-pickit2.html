@@ -1,0 +1,17 @@
+---
+layout: post
+title: Homemade USB PIC Programmer - PICKIT2 Lite
+date: '2011-07-24T10:52:00.012+05:30'
+author: බුද්ධික
+tags:
+- Programmer
+- PIC
+- PICKIT2
+- lite
+modified_time: '2011-07-24T11:11:41.110+05:30'
+thumbnail: http://3.bp.blogspot.com/-GidpfvlPPh0/Tiuwg-nqfjI/AAAAAAAAAgM/W6nLma9f72U/s72-c/DSC00471_1024x768.jpg
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-3846086879095757422
+blogger_orig_url: https://www.incrediblediy.com/2011/07/homemade-usb-pic-programmer-pickit2.html
+---
+
+I was using various programmers for PIC programming.JDM was one of that,which I used for a long time but it's a Serial port programmer.I have used ART2003 programmer for programming 18F using Parallel port.Both of this works kinda well but not very much good.So,I decided to build a USB programmer based on Microchip's PICKIT2.It is very reliable and speedy comparing to other Serial or Parallel port programmers and also have good support as it is based on official PICKIT2 programmer.You can you this with any PC as newer PCs don't have Serial or Parallel ports.This even can be used as a UART tool and Logic analyzer too.It just cost me SLRs 800 to build this.<br /><br /><br />The Schematic can be found at;<br /><br /><a href="http://dlmkerode.tripod.com/PICKIT2_1.htm">MicroKid's Web site</a> <br />Use PICkIT2_SCH.pdf on the RAR file<br />Use 1N5817/1N5818/1N5819 for two diodes on the schematic.<br />The 680uH inductor can be changed with any inductor,I used 330uH for that.<br />All other parts are readily available on the market.<br /><br />You an download the HEX and Programming software from<br /><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/PICkit%202%20v2.61.00%20Setup%20A.zip">Microchip Site</a><br /><br />After installing this,the HEX file will be located at<br />C:\Program Files\Microchip\PICkit 2 v2\PK2V023200.hex<br /><br />You can program this HEX to PIC18F2550 using <a href="http://lab.buddika.info/2011/06/very-simple-pic-18f-programmer.html">ART2003 programmer</a> in my previous post.<br />(enable LVP config bit when programming with WinPIC800)<br /><br />This is my PICKIT2 lite programmer :)<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/-GidpfvlPPh0/Tiuwg-nqfjI/AAAAAAAAAgM/W6nLma9f72U/s1600/DSC00471_1024x768.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://3.bp.blogspot.com/-GidpfvlPPh0/Tiuwg-nqfjI/AAAAAAAAAgM/W6nLma9f72U/s400/DSC00471_1024x768.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5632789839568600626" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/-iZXrXHq2uKI/TiuwgxmUXzI/AAAAAAAAAgU/M6r3K8G5tUc/s1600/DSC00469_1024x768.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://1.bp.blogspot.com/-iZXrXHq2uKI/TiuwgxmUXzI/AAAAAAAAAgU/M6r3K8G5tUc/s400/DSC00469_1024x768.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5632789836073295666" /></a>

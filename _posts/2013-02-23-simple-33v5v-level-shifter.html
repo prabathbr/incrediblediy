@@ -1,0 +1,18 @@
+---
+layout: post
+title: Simple 3.3V–5V level shifter
+date: '2013-02-23T21:42:00.001+05:30'
+author: Anonymous
+tags:
+- Level Shift
+- Microcontroller
+- TTL
+- I/O
+- LVTTL
+modified_time: '2013-02-23T21:42:36.066+05:30'
+thumbnail: http://lh5.ggpht.com/--KZuBgP0aYk/USjqaLn0z5I/AAAAAAAAAKg/QjzcxKYh1R0/s72-c/to5_thumb%25255B2%25255D.jpg?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-9044357070369770644
+blogger_orig_url: https://www.incrediblediy.com/2013/02/simple-33v5v-level-shifter.html
+---
+
+<p>In present day electronic we find many sensors or modules working in 3.3V logic levels.In other terms LVTTL devices (Low-voltage TTL). But even now we mostly use 5V TTL logic level uC or other devices with them. Hence, we need to change logic levels between 3.3V &lt;---&gt; 5V when interfacing both of them together. There are many dedicated chips for this and there was none available in the country. So I decided to build some simple circuits to do this conversion using transistors. Here,you can use any general purpose&#160; NPN transistors available in your country such as 2N39042SC828,BC547…etc. You need to supply 3.3V &amp; 5V as shown in the schematics as Vcc. This won’t be a problem as you may already have these two power rails in your circuit as you use both for chips as Vcc. I have tested this on my 3.3V Bluetooth module interfaced with 5V PIC16F887.It worked well.</p>  <p><a href="http://lh6.ggpht.com/-L1TE_-3QgX0/USjqZbrcOII/AAAAAAAAAKY/PrLbyWPCGNg/s1600-h/to5%25255B4%25255D.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="to5" border="0" alt="to5" src="http://lh5.ggpht.com/--KZuBgP0aYk/USjqaLn0z5I/AAAAAAAAAKg/QjzcxKYh1R0/to5_thumb%25255B2%25255D.jpg?imgmax=800" width="644" height="435" /></a></p>  <p><a href="http://lh3.ggpht.com/-oassyeE_ypQ/USjqbnLAwzI/AAAAAAAAAKo/-gtX7IkdiK8/s1600-h/from5%25255B3%25255D.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="from5" border="0" alt="from5" src="http://lh6.ggpht.com/-9uYjyekxsZQ/USjqcjFHBDI/AAAAAAAAAKw/oPD6uCKZhoY/from5_thumb%25255B1%25255D.jpg?imgmax=800" width="644" height="383" /></a></p>  

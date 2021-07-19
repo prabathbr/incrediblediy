@@ -1,0 +1,19 @@
+---
+layout: post
+title: Driving a DC motor using ULN2803 + PIC16F887
+date: '2013-02-16T19:44:00.001+05:30'
+author: Anonymous
+tags:
+- 16F887
+- Darlington
+- ULN2803
+- Driver
+- development
+- Motor
+modified_time: '2013-02-16T19:44:02.722+05:30'
+thumbnail: http://lh3.ggpht.com/-OFvFbsa4cMU/UR-T2L3TVcI/AAAAAAAAAEk/6BtX5kpCGRw/s72-c/wlEmoticon-smile2.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-8064547733402858321
+blogger_orig_url: https://www.incrediblediy.com/2013/02/driving-dc-motor-using-uln2803-pic16f887.html
+---
+
+<p>As I showed how to drive external load using ULN2803 coupled to PIC16F887 in the <a href="http://www.incrediblediy.com/2013/02/driving-external-loads-using-uln2803.html">previous post</a>,Here I’m going to drive a small DC motor using that concept <img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://lh3.ggpht.com/-OFvFbsa4cMU/UR-T2L3TVcI/AAAAAAAAAEk/6BtX5kpCGRw/wlEmoticon-smile2.png?imgmax=800" /></p>  <p>I found this small DC motor from a old CDROM. It was used in the tray eject mechanism of the CDROM.You can find many reusable components by dissembling old electronics such as CDROM,VCR,Printers…etc. As I found it works well even with 5V and draws about 20mA in operation,a nice little motor <img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-openmouthedsmile" alt="Open-mouthed smile" src="http://lh3.ggpht.com/-A2U9EsVL-_s/UR-T2o396xI/AAAAAAAAAEs/T6_Y4bVhzRQ/wlEmoticon-openmouthedsmile2.png?imgmax=800" />. The load in the schematic is the motor for this case. I used the same code in the LED driver post and you can get it from <a href="http://www.incrediblediy.com/2013/02/driving-external-loads-using-uln2803.html">there</a>.</p>  <p>&#160;<a href="http://lh3.ggpht.com/-o8_197W6gRc/UR-T4xE8DFI/AAAAAAAAAE0/jad6_JRB_qc/s1600-h/DSCF5576_800x6004.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCF5576_800x600" border="0" alt="DSCF5576_800x600" src="http://lh3.ggpht.com/-XkDEd8Vy_5w/UR-T7QSuPNI/AAAAAAAAAE8/r8AHIimpFa4/DSCF5576_800x600_thumb1.jpg?imgmax=800" width="795" height="371" /></a></p>  <p>The little friend in action <img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-winkingsmile" alt="Winking smile" src="http://lh3.ggpht.com/-72NymqbAaNM/UR-T8seR0iI/AAAAAAAAAFE/tN8l0bHpxWM/wlEmoticon-winkingsmile2.png?imgmax=800" /></p>  <p><a href="http://lh3.ggpht.com/-H738v2-7908/UR-UAhlZjtI/AAAAAAAAAFM/H8biOx9WIkU/s1600-h/DSCF5591_800x6004.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCF5591_800x600" border="0" alt="DSCF5591_800x600" src="http://lh6.ggpht.com/-BqmixTpRTOc/UR-UEulEE-I/AAAAAAAAAFU/Qzdp0QItIqo/DSCF5591_800x600_thumb1.jpg?imgmax=800" width="755" height="499" /></a></p>  <p><a href="http://lh6.ggpht.com/-8GmXBnFZAYo/UR-UICASKqI/AAAAAAAAAFc/Ca6OgkuiIgs/s1600-h/DSCF5588_800x6004.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="DSCF5588_800x600" border="0" alt="DSCF5588_800x600" src="http://lh4.ggpht.com/-eWHP1daA6bY/UR-UKftHHGI/AAAAAAAAAFk/hASx9dAqv0w/DSCF5588_800x600_thumb1.jpg?imgmax=800" width="700" height="415" /></a></p>  

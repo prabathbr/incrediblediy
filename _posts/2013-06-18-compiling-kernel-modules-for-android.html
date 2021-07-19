@@ -1,0 +1,23 @@
+---
+layout: post
+title: Compiling kernel modules for an Android phone
+date: '2013-06-18T22:31:00.001+05:30'
+author: බුද්ධික
+tags:
+- PL2303
+- Linux
+- USB
+- UART
+- ADB
+- kernel
+- linaro
+- modules
+- Android
+- toolchain
+- CP2102
+modified_time: '2013-06-18T22:34:49.389+05:30'
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-3897797309280021850
+blogger_orig_url: https://www.incrediblediy.com/2013/06/compiling-kernel-modules-for-android.html
+---
+
+I recently got a <a href="https://en.wikipedia.org/wiki/USB_On-The-Go">USB OTG</a> cable for my mobile phone and I wanted to use my <a href="http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=225&amp;pcid=41">PL2303 USB to UART</a> convertor with it. It is great for the embedded system projects I'm working on. You can follow the below procedure to do it yourself.<br /><br /><br />Phone kernel : <a href="http://forum.xda-developers.com/showthread.php?t=2167119">Linux 2.6.32.60-Kappa1.6</a><br />PC O/S : <a href="http://www.ubuntu.com/download/desktop">Ubuntu 13.04 32bit</a><br /><br />1) Check for your kernel info using "<b>uname -a</b>" on either terminal emulator or <a href="http://developer.android.com/tools/help/adb.html%E2%80%8E">ADB</a> (use "<b>adb shell</b>" and run it).<br />My result:&nbsp; <b>Linux version 2.6.32.60-Kappa1.6 (Ka@Kappa) (gcc version 4.7.3 20130102 (prerelease) (Linaro GCC 4.7-2013.01) ) #94 PREEMPT Sun Apr 28 23:46:13 CEST 2013</b><br /><br />2) Get the appropriate kernel source for your kernel. I got 2.6.32.60-Kappa1.6 kernel source from a GIT host using, (If you don't have <b>git </b>installed, you can install it by <b>sudo apt-get install git</b>)<br /><b>git clone https://github.com/KaSt/Kappa.git</b><br /><br />3) Download the appropriate cross-compiler toolchain, I'm using <a href="https://launchpadlibrarian.net/129960680/gcc-linaro-arm-linux-gnueabihf-4.7-2013.01-20130125_linux.tar.bz2">Linaro GCC 4.7-2013.01</a> toolchain.<br /><br />4) Extract toolchain to somewhere, I extracted it to, <b>/home/buddika/linaro</b><br /><br />5) Set path variable to the <b>bin</b> directory of the toolchain using,<br /><b>export PATH=/home/buddika/linaro/bin/:$PATH</b><br /><br />6) Copy the kernel configuration file to the main folder where kernel source it. I executed following command at there,<br /><b>cp /home/buddika/kernel/Kappa/arch/arm/configs/ka_coconut_defconfig .config</b><br /><br />7) Check<b> MakeFile</b> and <b>config</b> files and edit them to match the kernel magic version(in my case 2.6.32.60-Kappa1.6). I had to edit following line on <b>config</b> file,<br />CONFIG_LOCALVERSION=<b>"$(KERNEL_LOCAL_VERSION)-Kappa $(KAREL)"</b> to <br />CONFIG_LOCALVERSION=<b>"$(KERNEL_LOCAL_VERSION)-Kappa1.6"</b><br /><br />8) Check the toolchain's binary directory and find the prefix for the compiler, if you see file like arm-linux-gnueabihf-gcc , the prefix is "<b>arm-linux-gnueabihf-</b>". Note this down for steps below.<br /><br />9) Go to the kernel source directory, Let's clean the old binary files which may be there.<br /><b>ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make clean</b><br /><br />10) Let's run <b>menuconfig</b> to configure the kernel options. This will give you a GUI where you can enable features. Select features you need as modules (in my case usbserial...etc) and press <b>M</b> to build them as modules.<br /><b>ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make menuconfig</b><br /><br />11) Finally build the selected features as kernel modules. :)<br /><b>ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make modules</b><br /><br />Now you can find the compiled kernel modules at "<b>drivers/usb/serial/</b>" folder in the kernel source folder. If you enabled other functions please check the appropriate folder.<br /><br />I will show you how to use these newly compiled modules on your phone to use USB to UART module in the next post :D

@@ -1,0 +1,20 @@
+---
+layout: post
+title: MSP430 In circuit programming with MSP430 Launchpad using Spy-Bi wire interface
+date: '2013-04-21T10:15:00.002+05:30'
+author: බුද්ධික
+tags:
+- Programmer
+- msp430
+- spy bi wire
+- icsp
+- launchpad
+- Microcontroller
+- sbw
+modified_time: '2013-04-21T10:15:57.229+05:30'
+thumbnail: http://1.bp.blogspot.com/-nqRRbey5XBs/UXNs8kHbRMI/AAAAAAAAAqM/9fYyDmbS0m0/s72-c/pin.jpg
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-5340628087541646627
+blogger_orig_url: https://www.incrediblediy.com/2013/04/msp430-in-circuit-programming-with.html
+---
+
+When we use microcontrollers in our circuits we need to program and debug them in circuits after soldering. Hence, In circuit programming is much useful in such cases. Here I'm going to program my MSP430G2211 microcontroller in a circuit. The programmer I'm going to use is the MSP430 Launchpad. You can get all of them from <a href="https://estore.ti.com/MSP-EXP430G2-MSP430-LaunchPad-Value-Line-Development-kit-P2031.aspx">TI</a> including FedEX shipping.I got them for $4.30 couple of years ago and it was a great deal. This MSP430 value line microcontrollers can be programmed using Spy-Bi wire JTAG interface.<br /><br /><u>Device connections:</u><br /><br />You have to connect SBWTCK(TEST) and SBWTDIO(RST') connections between Launchpad and microcontroller. You may also give power to the device from Launchpad too.<br /><br />Here is the pinout for my MSP430G2211 from its <a href="http://www.ti.com/lit/ds/symlink/msp430g2001.pdf">datasheet</a>.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-nqRRbey5XBs/UXNs8kHbRMI/AAAAAAAAAqM/9fYyDmbS0m0/s1600/pin.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="304" src="http://1.bp.blogspot.com/-nqRRbey5XBs/UXNs8kHbRMI/AAAAAAAAAqM/9fYyDmbS0m0/s640/pin.jpg" width="640" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />You may connect the device and Launchpad like this.Use some jumper wires and connect them to the given connector headers on the launchpad.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-Tiz-NObSpq8/UXNtRqln6wI/AAAAAAAAAqc/8TEkC6XBcVk/s1600/DSCF5946.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://2.bp.blogspot.com/-Tiz-NObSpq8/UXNtRqln6wI/AAAAAAAAAqc/8TEkC6XBcVk/s400/DSCF5946.JPG" width="290" /></a></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-RARQh9bZg9o/UXNtLHoP0vI/AAAAAAAAAqU/fisHT2DbuR8/s1600/DSCF5942.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="366" src="http://4.bp.blogspot.com/-RARQh9bZg9o/UXNtLHoP0vI/AAAAAAAAAqU/fisHT2DbuR8/s400/DSCF5942.JPG" width="400" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Now you can use Code Composer Studio or any other software to write code and program/debug it to the microcontroller as they are on the Launchpad itself. I coded a simple LED blink application at P1.0 (pin2) and tested on above circuit which was a success.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-58E3I_ujDYA/UXNuu4sDWeI/AAAAAAAAAqk/--Y0cSN0st8/s1600/prog.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="277" src="http://2.bp.blogspot.com/-58E3I_ujDYA/UXNuu4sDWeI/AAAAAAAAAqk/--Y0cSN0st8/s400/prog.jpg" width="400" /></a></div><br />

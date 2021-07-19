@@ -1,0 +1,20 @@
+---
+layout: post
+title: Native C programs for ARM based Android phones
+date: '2013-06-16T15:02:00.002+05:30'
+author: බුද්ධික
+tags:
+- ARM
+- Program
+- ADB
+- C
+- GCC
+- Android
+- Compilers
+modified_time: '2013-06-16T15:06:32.593+05:30'
+thumbnail: http://3.bp.blogspot.com/-IB74VQ-_pjw/Ub2FVJNo_nI/AAAAAAAAAsc/rT2YfvPpMyg/s72-c/count1.png
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-3223543062946730744
+blogger_orig_url: https://www.incrediblediy.com/2013/06/native-c-programs-for-arm-based-android.html
+---
+
+You can always use Android SDK to program and build Java programs for android phone which are running on <a href="http://en.wikipedia.org/wiki/Dalvik_(software)">Dalvik Virtual Machine</a>. Recently I wanted to build some native C applications for my phone. As Android is based on Linux kernal, it's matter of finding an appropriate cross compiler for the PC. As I found out there are many toolchains for this and I used<a href="http://www.linaro.org/downloads/"> Linaro </a>ARM tool chain for Windows (WIN32). This is based on <a href="http://gcc.gnu.org/">GCC</a> and&nbsp; I downloaded <a href="https://launchpadlibrarian.net/140561607/gcc-linaro-arm-linux-gnueabihf-4.8-2013.05-20130523_win32.exe">2013.05</a> version and installed it using the installer. Please make sure to tick "add to the PATH" when you installing this.<br /><br />I wrote this small code to test and saved as count.c ,<br /><br /><b>#include &lt;stdio.h&gt;<br />int main()<br />{<br />int x=0;<br />for(x=0;x&lt;11;x++){<br />printf("%i\n",x);<br />}<br />}</b><br /><br />Then I compiled it using following command in command prompt,<br /><br />D:\&gt;<b>arm-linux-gnueabihf-gcc count.c -o count -static</b><br /><br />The I copied the binary file to mobile using <a href="http://developer.android.com/tools/help/adb.html">ADB</a> (Android Debug Bridge), you can do it using a file manager too. Make sure to put the compile binary to /system because you can execute binaries only at there in android system.<br /><br />D:\&gt;<b>adb push count /system</b><br />3049 KB/s (463524 bytes in 0.148s)<br /><br />Then I logged into android shell using ADB, You may use a Terminal Emulator software on the phone itself.<br /><br />D:\&gt;<b>adb shell </b><br /><br />I got root access and changed the file attributes of "count" binary to make it executable (same as on any Linux distribution). (You can either use chmod +x or chmod 777)<br /><br />~ # <b>su</b><br />root@android:/ # <b>cd /system</b><br />root@android:/system # <b>chmod 777 count</b><br /><br />I executed "count" and tested ,<br /><br /><br />root@android:/system # <b>./count</b><br />./count<br />0<br />1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11|root@android:/system #<br /><br />I also tested the program on phone using a terminal emulator too,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-IB74VQ-_pjw/Ub2FVJNo_nI/AAAAAAAAAsc/rT2YfvPpMyg/s1600/count1.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="400" src="http://3.bp.blogspot.com/-IB74VQ-_pjw/Ub2FVJNo_nI/AAAAAAAAAsc/rT2YfvPpMyg/s400/count1.png" width="266" /></a></div><br /><br /><br /><br />

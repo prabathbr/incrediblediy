@@ -1,0 +1,19 @@
+---
+layout: post
+title: Micro controller Networking - UART to SPI bridge
+date: '2012-03-18T11:22:00.010+05:30'
+author: බුද්ධික
+tags:
+- UART
+- PIC
+- Networking
+- Microcontroller
+- SPI
+- PIC16F887
+modified_time: '2012-03-18T11:46:17.475+05:30'
+thumbnail: http://1.bp.blogspot.com/-GQRM0EG1Tv0/T2V84TeUS7I/AAAAAAAAAi4/lCU-IaMHeds/s72-c/masterslave.jpg
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-3505205226288708232
+blogger_orig_url: https://www.incrediblediy.com/2012/03/micro-controller-networking-uart-to-spi.html
+---
+
+There are many parts used in embedded systems.In most cases,we have to transfer data between these components.In this tutorial we're going to look how to receive data from <a href="http://en.wikipedia.org/wiki/Universal_asynchronous_receiverhttp://www.blogger.com/img/blank.gif/transmitter">UART</a> module in a PIC micro and transfer those data to another component using <a href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus">SPI</a> module.Using this method we can transfer single input to multiple receivers because we can use more than one component in SPI. <br /><br />In here,PIC16F887 micro controller is used as the UART receiver and it'll send the received data via it's SPI module.MikroC PRO is used for the writing the firmware.You can download the FREE(with some limitations) version from,<br /><br /><a href="http://www.mikroe.com/eng/product_downloads/download/"><br />MikroC PRO Download Page</a><br /><br />This is the code used.First we initialize UART module to work at 9600bps.<br />Then we initialize SPI module.Then the code is to check whether there is data coming to UART module and if so,just relay them to SPI module.The last line will send received data again to another UART receiver via UART Tx pin.<br /><br />You can find more info on these modules form MikroC knowledge base.<br /><a href="http://www.mikroe.com/esupport/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=150"><br />SPI Library</a> <br /><a href="http://www.mikroe.com/esupport/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=157">UART Library</a><br /><br /><blockquote>void main() {<br />  char receive;<br />   UART1_Init(9600);<br />   SPI1_Init_Advanced(_SPI_MASTER_OSC_DIV4, _SPI_DATA_SAMPLE_END,<br />                   _SPI_CLK_IDLE_HIGH, _SPI_LOW_2_HIGH);<br />   while(1){<br />  if (UART1_Data_Ready() == 1) {<br /> receive = UART1_Read();<br /> SPI1_Write(receive);<br /> UART1_Write(receive);<br />}<br />}</blockquote><br /><br /><span style="font-weight:bold;">Circuit with PIC16F887 Slave with this PIC16F887 Master:(Click on image to get high resolution schematic)</span><br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/-GQRM0EG1Tv0/T2V84TeUS7I/AAAAAAAAAi4/lCU-IaMHeds/s1600/masterslave.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 188px;" src="http://1.bp.blogspot.com/-GQRM0EG1Tv0/T2V84TeUS7I/AAAAAAAAAi4/lCU-IaMHeds/s400/masterslave.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5721116208386034610" /></a><br /><br />In the next post,we'll build a simple motor controller slave with this :D

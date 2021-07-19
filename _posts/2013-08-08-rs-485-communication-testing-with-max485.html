@@ -1,0 +1,20 @@
+---
+layout: post
+title: RS-485 Communication testing with MAX485
+date: '2013-08-08T22:47:00.003+05:30'
+author: බුද්ධික
+tags:
+- instrumentation
+- USB
+- protocol
+- CH430
+- RS232
+- RS485
+- MAX485
+modified_time: '2013-08-08T22:47:44.646+05:30'
+thumbnail: http://3.bp.blogspot.com/-lIjjw6XJR7g/UgPQf5jnLbI/AAAAAAAAAwc/KVLTidy-06w/s72-c/cct.JPG
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-6481256918856394317
+blogger_orig_url: https://www.incrediblediy.com/2013/08/rs-485-communication-testing-with-max485.html
+---
+
+As we know about <a href="http://en.wikipedia.org/wiki/RS-232%E2%80%8E">RS-232</a> communication protocol, I'm going to try <a href="http://en.wikipedia.org/wiki/RS-485%E2%80%8E">RS-485</a> communication between two nodes. RS-485 can support multiple slaves and mostly used in industrial applications with high separation distance between nodes. I recently got 10pcs of <a href="http://www.maximintegrated.com/datasheet/index.mvp/id/1111">MAX485</a> IC from ebay for $1 which is a RS-485 transceiver. I also got&nbsp; USB to RS-485 convertor based on CH430 + MAX485. I'm using another USB-UART convertor based on PL2303 for this test setup. So, I have two USB-UART chips connected using two MAX485 ICs in between,which provides the RS-485 communication.<br /><br />My test setup according to MAX485 <a href="http://ecee.colorado.edu/~mcclurel/max485ds.pdf">datasheet</a>.<br />(Image extracted from datasheet)<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-lIjjw6XJR7g/UgPQf5jnLbI/AAAAAAAAAwc/KVLTidy-06w/s1600/cct.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="178" src="http://3.bp.blogspot.com/-lIjjw6XJR7g/UgPQf5jnLbI/AAAAAAAAAwc/KVLTidy-06w/s400/cct.JPG" width="400" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />As MAX485 is half duplex, I have to use one as TX with following setup. I'm using my USB-RS485 adapter as&nbsp; RX and there is no need of manual setting as RX.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-yn7naSYxim8/UgPRCKkMdEI/AAAAAAAAAwk/sQ7abbqpAbk/s1600/cct2.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="178" src="http://1.bp.blogspot.com/-yn7naSYxim8/UgPRCKkMdEI/AAAAAAAAAwk/sQ7abbqpAbk/s400/cct2.JPG" width="400" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />My TX setup on breadboard:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-a9eHibBFNmk/UgPRXbnXQnI/AAAAAAAAAws/BIk7DNySevo/s1600/DSC_0078.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="291" src="http://4.bp.blogspot.com/-a9eHibBFNmk/UgPRXbnXQnI/AAAAAAAAAws/BIk7DNySevo/s320/DSC_0078.jpg" width="320" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />My RX setup, the one is right is USB-RS485 convertor:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-t-fmSlxGpR8/UgPRu4ZJVbI/AAAAAAAAAw0/BIWg48lj-6A/s1600/DSC_0081.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="291" src="http://3.bp.blogspot.com/-t-fmSlxGpR8/UgPRu4ZJVbI/AAAAAAAAAw0/BIWg48lj-6A/s320/DSC_0081.jpg" width="320" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Test results :<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-jlnjUyJ-tL4/UgPR5EH8oGI/AAAAAAAAAw8/tPrNvf3j998/s1600/ComWindow.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="251" src="http://4.bp.blogspot.com/-jlnjUyJ-tL4/UgPR5EH8oGI/AAAAAAAAAw8/tPrNvf3j998/s640/ComWindow.JPG" width="640" /></a></div>

@@ -1,0 +1,20 @@
+---
+layout: post
+title: Sinhala font installation on Sony Xperia V (Android)
+date: '2014-09-28T19:13:00.000+05:30'
+author: බුද්ධික
+tags:
+- terminal
+- installation
+- Fonts
+- Sinhala
+- root
+- Android
+- shell
+modified_time: '2014-09-28T19:13:04.627+05:30'
+thumbnail: http://2.bp.blogspot.com/-VIQUIy7W3XU/VCgPkL3yPwI/AAAAAAAABC0/IP_48ras1vU/s72-c/Screenshot_2014-09-28-18-49-11.png
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-1587449559258436055
+blogger_orig_url: https://www.incrediblediy.com/2014/09/sinhala-font-installation-on-sony.html
+---
+
+You can install any Sinhala font from your mobile itself and use it in any browser you like with following instructions.<br /><br />Preparation:<br /><br />1) Root your device.<br />I rooted my Sony Xperia V (LT25i) with "<a href="http://forum.xda-developers.com/showthread.php?t=2787173">towelroot</a>" tool. No need to run complex scripts, just one click is enough.<br /><br />2) Download a Sinhala ttf font to your phone and rename it to "DroidSansFallback.ttf" (or get a renamed file from <a href="http://sinhala.kalingasblog.com/2010/07/25/sinhala-unicode-on-android-google-nexus-one/">here</a>)<br />I have put this font file to "/sdcard1/DroidSansFallback.ttf" in the beginning.<br /><br />3) Install a terminal emulator app from Google play store", I used this "<a href="https://play.google.com/store/apps/details?id=jackpal.androidterm">terminal emulator</a>"<br /><br /><br />Procedure:<br /><br />Open the terminal emulator app and run the following commands in the given order.<br /><br />1) Get root access<br />#<b>su</b><br /><br />2) Grant super user access to terminal emulator in the pop up window.<br /><b> </b><br />3) Get <a href="http://www.incrediblediy.com/2013/06/using-usb-to-uart-rs232-modules-with.html">read/write access</a> to /system<br />#<b>mount -o rw,remount /system</b><br /><br />4) Copy DroidSansFallback.ttf file /system/fonts<br /><b> #cp </b><b>/sdcard1/DroidSansFallback.ttf /system/fonts</b><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><b><a href="http://2.bp.blogspot.com/-VIQUIy7W3XU/VCgPkL3yPwI/AAAAAAAABC0/IP_48ras1vU/s1600/Screenshot_2014-09-28-18-49-11.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-VIQUIy7W3XU/VCgPkL3yPwI/AAAAAAAABC0/IP_48ras1vU/s1600/Screenshot_2014-09-28-18-49-11.png" height="640" width="360" /></a></b></div><b><br /></b><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />Now you can open your favorite browser and read Sinhala text, I used Firefox browser to test it.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-ETrcNlOKJi0/VCgP32IuKUI/AAAAAAAABC8/YUVb6iUeJYs/s1600/Screenshot_2014-09-28-18-56-20.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-ETrcNlOKJi0/VCgP32IuKUI/AAAAAAAABC8/YUVb6iUeJYs/s1600/Screenshot_2014-09-28-18-56-20.png" height="640" width="360" /></a></div><br />

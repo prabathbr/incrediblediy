@@ -1,0 +1,21 @@
+---
+layout: post
+title: Variable frequency PWM using MikroC + PIC16F887
+date: '2013-02-23T22:33:00.001+05:30'
+author: Anonymous
+tags:
+- 16F887
+- Driver
+- DIY
+- PWM
+- 18F4550
+- Servo
+- I/O
+- Motor
+modified_time: '2013-02-23T22:33:26.982+05:30'
+thumbnail: http://lh6.ggpht.com/-DCNHfRjrxGc/USj06o1v61I/AAAAAAAAALQ/6d6EfCdECBA/s72-c/image_thumb%25255B2%25255D.png?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-5422140997631417799
+blogger_orig_url: https://www.incrediblediy.com/2013/02/variable-frequency-pwm-using-mikroc.html
+---
+
+<p>When I was doing a project on a robot,I found out that the MikroC PWM library doesn’t support variable frequency values for the PWM frequency. I needed to use such variable values to drive servo motor according to the feedback. Hence,I tried to find some other libraries I can use (I know it’s easy to write from scratch,but why show we reinvent the wheel?)</p>  <p>After googling,I found this excellent PWM library for MikroC by Barton J.&#160; Dring.You can get it from his site,<a href="http://eng-serve.com/pic/pwm_functions.html">Dring Engineering Services PWM page</a></p>  <p>You just have to include two functions setPWMFreq(...) &amp; setPWMDuty(...) ,from their in your code.Then you can simply call swtPWMFreq(..) function when you need to generate a PWM signal as,</p>  <pre><code>setPWMFreq(unsigned long Fpwm, unsigned long Fosc, unsigned int dutyPercent);<br /></code></pre><br /><br /><p>Here I’m going to show how to run a servo motor using PWM,</p><br /><br /><table border="1" cellspacing="0" cellpadding="2" width="400"><tbody><br />    <tr><br />      <td valign="top" width="400">include functions setPWMFreq(...) &amp; setPWMDuty(...)&#160; in the beginning <br />        <br /><br /><br />        <br /><br /><br />        <p><br />          <br />void main() { <br /><br />          <br />char duty=50; // Set the duty cycle <br /><br />          <br />OSCCON=0x10; //Setup Internal Oscillator to 125kHz clock <br /><br />          <br />TRISC = 0; //Set portC as output <br /><br />          <br />setPWMFreq(9,125000,duty); //Set PWM to 9Hz,Fosc=125kHz,duty=50% <br /><br />          <br />while(1){ <br /><br />          <br />delay_ms(100); <br /><br />          <br />} <br /><br />          <br />}</p><br />      </td><br />    </tr><br />  </tbody></table><br /><br /><p>Configuration bits:</p><br /><br /><p><a href="http://lh5.ggpht.com/-heMQQmdMgnM/USj05G849EI/AAAAAAAAALI/zwvjPrrUTB4/s1600-h/image%25255B6%25255D.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://lh6.ggpht.com/-DCNHfRjrxGc/USj06o1v61I/AAAAAAAAALQ/6d6EfCdECBA/image_thumb%25255B2%25255D.png?imgmax=800" width="644" height="411" /></a></p><br /><br /><p>Here are some useful pages on PIC PWM</p><br /><br /><p><a href="http://ww1.microchip.com/downloads/en/devicedoc/41291f.pdf">PIC16F887 Datasheet</a></p><br /><br /><p><a href="http://www.micro-examples.com/public/microex-navig/doc/097-pwm-calculator.html">PWM Calculator</a></p><br /><br /><p><a href="http://www.best-microcontroller-projects.com/pic-pwm-interrupt.html">PWM Code</a></p><br /><br /><p>Here is a video of running my servo motors using similar code <img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-openmouthedsmile" alt="Open-mouthed smile" src="http://lh5.ggpht.com/-JgXKLrXBJ5I/USj07d0zSbI/AAAAAAAAALY/oZHjLBBPteU/wlEmoticon-openmouthedsmile%25255B2%25255D.png?imgmax=800" /></p><br /><br /><div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:e7e096d3-e312-489c-99e2-d8a173abc080" class="wlWriterEditableSmartContent"><div><object width="448" height="252"><param name="movie" value="http://www.youtube.com/v/_pcV9PKJ7io?hl=en&amp;hd=1"></param><embed src="http://www.youtube.com/v/_pcV9PKJ7io?hl=en&amp;hd=1" type="application/x-shockwave-flash" width="448" height="252"></embed></object></div><div style="width:448px;clear:both;font-size:.8em">PIC18F4550 driving MG995 Servo motors</div></div>  

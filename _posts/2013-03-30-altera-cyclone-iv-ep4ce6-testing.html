@@ -1,0 +1,20 @@
+---
+layout: post
+title: Altera Cyclone IV EP4CE6 Testing
+date: '2013-03-30T21:04:00.001+05:30'
+author: Anonymous
+tags:
+- Quartus II
+- EP4CE6E22C8N
+- FPGA
+- Altera
+- CoreEP4CE6
+- Cyclone IV
+- USB Blaster
+modified_time: '2013-03-30T21:04:18.930+05:30'
+thumbnail: http://lh3.ggpht.com/-447QWVJm_8k/UVcF6XF-x1I/AAAAAAAAAXo/axraLVOXh-U/s72-c/cct_thumb%25255B2%25255D.jpg?imgmax=800
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-5546880625326788507
+blogger_orig_url: https://www.incrediblediy.com/2013/03/altera-cyclone-iv-ep4ce6-testing.html
+---
+
+<p>As I showed in my <a href="http://www.incrediblediy.com/2013/03/video-blog-episode-1-unboxing-altera.html" target="_blank">previous post</a>,I’m going to test my <a href="http://www.aliexpress.com/store/product/CoreEP4CE6-EP4CE6E22C8N-EP4CE6-ALTERA-Cyclone-IV-CPLD-FPGA-Evaluation-Development-Core-Board-with-Full-IO-Expanders/216233_721734511.html">CoreEP4CE6</a> board. It is based on <a href="http://www.altera.com/devices/fpga/cyclone-iv/cyiv-index.jsp">Altera Cyclone IV</a> FPGA (EP4CE6E22C8N) . I got my Altera USB Blaster (bought from <a href="http://www.aliexpress.com/item/FREE-SHIPPING-USB-Blaster-Rev-C-ALTERA-CPLD-FPGA-programmer/723450936.html" target="_blank">here</a>) today and tested the FPGA .</p>  <p>I connected the power cable to the FPGA board and connected the JTAG cable from USB Blaster. The both devices were powered by USB. I installed Altera Quartus II Web Edition which is the default IDE for Altera FPGAs. You can download the free web edition from <a href="http://www.altera.com/products/software/quartus-ii/web-edition/qts-we-index.html" target="_blank">here</a></p>  <p>I thought to check the board by powering up a LED. I just wanted to connect the LED on PIN11 to Vcc to do this. You can follow the detailed steps on this from <a href="http://unboxnbeyond.wordpress.com/2013/03/24/hello-world-de0-nano/" target="_blank">here</a></p>  <p><u>The schematic diagram:</u></p>  <p><a href="http://lh3.ggpht.com/-Kwnw57rHfBM/UVcF5qppJPI/AAAAAAAAAXg/SPs8_ehxr5s/s1600-h/cct%25255B4%25255D.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="cct" border="0" alt="cct" src="http://lh3.ggpht.com/-447QWVJm_8k/UVcF6XF-x1I/AAAAAAAAAXo/axraLVOXh-U/cct_thumb%25255B2%25255D.jpg?imgmax=800" width="644" height="189" /></a>.</p>  <p><u>The pin assignment (according to the schematic of the board):</u></p>  <p><a href="http://lh4.ggpht.com/-2nRt3_wuIWk/UVcF67Pl3jI/AAAAAAAAAXw/1pcjBsIMK3g/s1600-h/pin%25255B4%25255D.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="pin" border="0" alt="pin" src="http://lh3.ggpht.com/-EQjwIsvR9gM/UVcF7mCVDgI/AAAAAAAAAX4/Xus_zPShvbs/pin_thumb%25255B2%25255D.jpg?imgmax=800" width="644" height="44" /></a></p>  <p><u>The hardware test (you can see the LED in bottom left is ON):</u></p>  <p><a href="http://lh6.ggpht.com/-YE_BgFmFaPI/UVcF8tNg9NI/AAAAAAAAAYA/vQvb07M6SL8/s1600-h/DSCF5880%25255B4%25255D.jpg"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="DSCF5880" border="0" alt="DSCF5880" src="http://lh5.ggpht.com/-2KBZHRNRwSU/UVcF9yIyeCI/AAAAAAAAAYI/Veo_1IdPaQw/DSCF5880_thumb%25255B1%25255D.jpg?imgmax=800" width="644" height="484" /></a></p>  

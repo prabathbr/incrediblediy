@@ -1,0 +1,22 @@
+---
+layout: post
+title: Computer controlled automated guided vehicles (AGV) using Parellel port interfacing
+date: '2013-08-08T23:24:00.001+05:30'
+author: බුද්ධික
+tags:
+- Interfacing
+- visual basic
+- vehicle
+- automated
+- inpout32.dll
+- automation
+- rover
+- agv
+- parallel port
+modified_time: '2013-08-08T23:24:59.520+05:30'
+thumbnail: http://2.bp.blogspot.com/-yW3gReJPcIs/UgPXLmocDTI/AAAAAAAAAxM/TA8QXJtSo3Y/s72-c/scrn.JPG
+blogger_id: tag:blogger.com,1999:blog-286864074933316179.post-2180723539270609200
+blogger_orig_url: https://www.incrediblediy.com/2013/08/computer-controlled-automated-guided.html
+---
+
+As we built a relay board to interface with "<a href="http://en.wikipedia.org/wiki/Parallel_port">parallel port</a>" in my <a href="http://www.incrediblediy.com/2013/04/relay-board-for-parellel.html">earlier post.</a> Today I'm going to talk about the control software for it. I wrote this software long time ago using <a href="http://en.wikipedia.org/wiki/Visual_Basic">Visual Basic 6</a> and <a href="http://logix4u.net/parallel-port/18-how-inpout32dll-works-">inpout32.dll</a> as the interface. I used this to control some modified toy cars as autonomous vehicles similar to <a href="http://en.wikipedia.org/wiki/Automated_guided_vehicle">automated guided vehicles</a> (AGV). The path can be programmed to the software in realtime or in advance. So, the vehicle will follow the route as we need. You can download the program with source code from <a href="http://www.mediafire.com/download/5mdf9j9hnzfw967/Robot_Car.7z">here</a>.<br /><br />The software interface:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-yW3gReJPcIs/UgPXLmocDTI/AAAAAAAAAxM/TA8QXJtSo3Y/s1600/scrn.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="235" src="http://2.bp.blogspot.com/-yW3gReJPcIs/UgPXLmocDTI/AAAAAAAAAxM/TA8QXJtSo3Y/s400/scrn.JPG" width="400" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />This was first designed as a school science exhibition project in 2007 and recently used to control a mars rover model in a local astronomy exhibition at <a href="http://www.chandanandabuddhistcollege.lk/">Sri Chandananda Buddhist College</a>:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-abanNjYrKHc/UgPY-C20o0I/AAAAAAAAAxc/gOMvF8pUwCc/s1600/scrn+(2).jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="243" src="http://1.bp.blogspot.com/-abanNjYrKHc/UgPY-C20o0I/AAAAAAAAAxc/gOMvF8pUwCc/s400/scrn+(2).jpg" width="400" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />The mars rover model:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-SvLtZqgZmF4/UgPZGv51DkI/AAAAAAAAAxk/o_gMkV2cdmA/s1600/rover.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="320" src="http://2.bp.blogspot.com/-SvLtZqgZmF4/UgPZGv51DkI/AAAAAAAAAxk/o_gMkV2cdmA/s320/rover.jpg" width="314" /></a></div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />The control circuit:<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-01a2Q-t0vkc/UgPZOQEGuPI/AAAAAAAAAxs/HUN2HB7LvxE/s1600/board.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-01a2Q-t0vkc/UgPZOQEGuPI/AAAAAAAAAxs/HUN2HB7LvxE/s320/board.jpg" width="320" /></a></div><br />
